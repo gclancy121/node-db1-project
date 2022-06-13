@@ -21,7 +21,7 @@ async function create(account) {
 
 async function updateById(id, account) {
   // DO YOUR MAGIC
-  await db('accounts').where('id', id).update(account);
+  await db('accounts').where('id', id).update({name: account.name, budget: account.budget});
   return getById(id);
 }
 
